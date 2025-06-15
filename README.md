@@ -1,28 +1,67 @@
 # 🌲 Cypress, do Zero à Nuvem ☁️
 
-👋 Seja bem-vindo(a)!
+## Sobre o Projeto
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai amar esse curso. ❤️
+Este repositório contém os exemplos práticos do curso **"Cypress, do Zero à Nuvem"** da Escola Talking About Testing. Aqui você encontrará demonstrações de como configurar, escrever e executar testes automatizados end-to-end com Cypress, além de tópicos como integração contínua, comandos customizados, upload de arquivos, simulação de dispositivos móveis e integração com Cypress Cloud.
 
-## O que você vai aprender?
+---
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar upload de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
-- Como executar os testes em um _workflow_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como integrar seu _workflow_ de integração contínua com o Cypress Cloud (o serviço de gestão de testes do Cypress na nuvem)
+## Pré-requisitos
 
-## Vamos começar?
+Antes de começar, você precisará ter instalado em sua máquina:
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+- [Node.js](https://nodejs.org/) (recomendado: v20.13.1 ou superior)
+- [npm](https://www.npmjs.com/) ( já vem com o Node.js)
+- [git](https://git-scm.com/) (para clonar o repositório)
+- [Visual Studio Code](https://code.visualstudio.com/) ou outro editor de código de sua preferência
 
-___
+Para verificar se já possui as versões necessárias, execute no terminal:
 
-Este é um curso da **Escola Talking About Testing**.
+```sh
+git --version && node --version && npm --version
+```
+
+---
+
+## Instalação
+
+Clone o repositório e instale as dependências do projeto:
+
+```sh
+git clone https://github.com/seu-usuario/cypress-do-zero-a-nuvem.git
+cd cypress-do-zero-a-nuvem
+npm install
+```
+
+---
+
+## Como Executar os Testes
+
+### Modo Interativo (Cypress App)
+
+Abra a interface gráfica do Cypress para selecionar e rodar os testes manualmente:
+
+```sh
+npm run cy:pc
+```
+
+### Modo Headless (linha de comando)
+
+Execute todos os testes automaticamente no terminal:
+
+```sh
+npm run test:pc
+```
+
+### Simulação de Dispositivo Móvel
+
+- **Interativo:**  
+  ```sh
+  npm run cy:mobile
+  ```
+- **Headless:**  
+  ```sh
+  npm run test:mobile
+  ```
+
+Os testes estão localizados na pasta [`cypress/e2e/`](cypress/e2e/).
