@@ -125,4 +125,29 @@ describe(('Central de Atendimento ao Cliente TAT'), () => {
     cy.contains('a', 'Política de Privacidade').invoke('removeAttr', 'target').click();
   })
   
+  it('exibe e oculta as mensagens de sucesso e erro usando .invoke()', () => { //TC20
+    cy.get('.success').should('not.be.visible').invoke('show').should('be.visible').and('contain', 'Mensagem enviada com sucesso.').invoke('hide').should('not.be.visible');
+    cy.get('.error').should('not.be.visible').invoke('show').should('be.visible').and('contain', 'Valide os campos obrigatórios!').invoke('hide').should('not.be.visible');
+  })
+
+  it('preenche o campo da área de texto usando o comando invoke', () => { //TC21
+    cy.get('#open-text-area').invoke('val', 'um texto qualquer').should('have.value', 'um texto qualquer');
+  })
+
+  it('faz uma requisição HTTP', () => { //TC22
+    cy.request('GET', 'https://cac-tat-v3.s3.eu-central-1.amazonaws.com/index.html',)
+      .should((response) => {
+        expect(response.status).to.eq(200);
+        expect(response.statusText).to.eq('OK');
+        expect(response.body).to.include('CAC TAT');
+      })
+  })
+
+  it('Achando o gato escondido', () => { //TC23
+    cy.get('#cat').invoke('show').should('be.visible');
+  })
+
+  it('Mudando um texto', () => { //TC24
+    cy.get('#title').invoke('text', 'CAT TAT');
+  })
 })
